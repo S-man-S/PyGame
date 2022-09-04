@@ -26,60 +26,6 @@ class Shot(games.Sprite):
                     pass
 
 
-class EnemyTest(games.Sprite):
-    def __init__(self, boss, place, image):
-        image = games.load_image("Enemies/Stage_2/1_zombie.png")
-        self.type = 1
-        self.boss = boss
-        self.attack_type = 0
-        self.attack_cooldown = 150
-        self.Spell_timer = self.Attack_timer = self.Move_timer = 0
-        x = y = 0
-        if place == 0:
-            x = 600
-            y = 400
-            while x in range(400, 801) or y in range(300, 501):
-                x = randint(150, 1050)
-                y = randint(150, 650)
-        if place == 1:
-            x = randint(200, 1000)
-            y = randint(100, 400)
-        elif place == 2:
-            x = randint(200, 1000)
-            y = randint(400, 700)
-        elif place == 3:
-            x = randint(600, 1100)
-            y = randint(200, 600)
-        elif place == 4:
-            x = randint(100, 600)
-            y = randint(200, 600)
-
-        self.SpeedX /= 60
-        self.SpeedY = self.SpeedX / 1.5
-        if boss == 1:
-            self.HP *= 5
-            self.DMG *= 2
-            self.SpeedX *= 1.5
-            self.SpeedY *= 1.5
-        super().__init__(image, 0, x, y)
-        self.HPBar = games.Text(self.HP, 20, color.red, x=self.x, y=self.top)
-        games.screen.add(self.HPBar)
-
-
-class Zombie(EnemyTest):
-    def __init__(self, boss, place):
-        image = games.load_image("Enemies/Stage_2/1_zombie.png")
-        self.HP = 275 #200
-        self.DMG = 40 #20
-        self.SpeedX = Constants.WindowWidth / 16 #17
-        self.respawn = True
-        if boss == 2:
-            self.HP = 100
-            self.DMG = 10
-            self.SpeedX /= 1.5
-            self.respawn = False
-        super().__init__(boss, place, image)
-
 class Enemy(games.Sprite):
     def __init__(self, var, boss, place):
         self.var = var

@@ -1,29 +1,5 @@
 import json
-from livewires import games
 
-
-# class Names:
-#     # Sprites:
-#     ## Character
-#     skin0_base = games.load_image("Character/Done/base.png")
-#     skin1_base = games.load_image("Character/Done/warrior_sword.png")
-#     skin1_damaged = games.load_image("Character/Done/warrior_sword_damaged.png")
-#     skin2_base =
-#     skin2_damaged =
-#     skin3_base =
-#     skin3_damaged =
-#     skin4_base =
-#     skin4_damaged =
-#     skin5_base =
-#     skin5_damaged =
-#     skin6_base =
-#     skin6_damaged =
-#     skin7_base =
-#     skin7_damaged =
-#     skin8_base =
-#     skin8_damaged =
-#     skin9_base =
-#     skin9_damaged =
 
 class Constants:
     FPS = 60
